@@ -1,0 +1,34 @@
+# Operations Log
+
+- [2026-05-02] Created `merge_data.py` to merge `pokemon.csv` and `combats.csv`.
+- [2026-05-02] Executed `merge_data.py`.
+- [2026-05-02] Created `one_hot_encoding.py` to apply One-Hot Encoding to nominal features.
+- [2026-05-02] Executed `one_hot_encoding.py`.
+- [2026-05-02] Creating `prepare_svm_data.py` to split data and convert to LIBSVM format.
+- [2026-05-05] Analyzed Homework2.pdf and provided feature selection recommendations for SVM model.
+- [2026-05-05] Created and executed `feature_analysis.py` to apply Filter Methods (Pearson, ANOVA, Mutual Information) to feature selection.
+- [2026-05-05] Generated comparison charts and wrote `feature_selection_report.md` to analyze Difference vs Raw features for SVM.
+- [2026-05-05] Created `Question1_Analysis.md` to formally answer the specific prompt regarding attribute distributions, means, and final feature selection conclusions.
+- [2026-05-05] Calculated normalized Z-scores for stats differences and updated `Question1_Analysis.md` to ensure fair comparison.
+- [2026-05-05] Created finalized `Question1_Report.md` directly in `d:\資料探勘_hw2` integrating all findings and normalized Z-scores.
+- [2026-05-05] Consolidated all analysis logic (types, normalized stats, filter methods) into a single clean `feature_analysis.py` and deleted redundant scripts.
+- [2026-05-05] Updated `feature_analysis.py` and `Question1_Report.md` to explicitly include raw mean and standard deviation tables to strictly satisfy the homework rubric.
+- [2026-05-05] Computed and added rigorous statistical analysis for Legendary (Win rate) and Generation (Pearson correlation) to `Question1_Report.md`.
+- [2026-05-05] Summarized the 18 unique Pokémon types available in the dataset.
+- [2026-05-05] Rewrote `data_transform.py` to compile selected features into LIBSVM sparse format and executed to create `svm_data.txt`.
+- [2026-05-05] Removed `diff_Defense` from feature generation in `data_transform.py` based on user feedback and low correlation.
+- [2026-05-05] Created `q2_holdout.py` to split scaled data 80/20, solve class imbalance with stratified sampling, and test 5 SVM parameter combinations.
+- [2026-05-05] Generated `Question2_Report.md` presenting the parameter tuning process, confusion matrices, and 6 evaluation metrics for Question 2.
+- [2026-05-05] Updated `Question1_Report.md` with the final list of 24 selected features and their index mapping for the SVM model.
+- [2026-05-06] Created `cross_validation.py` to perform 5-fold cross-validation on the 8,000-sample training set.
+- [2026-05-06] Executed 5-fold CV for 5 parameter sets, aggregating Confusion Matrices (sum) and metrics (average).
+- [2026-05-06] Identified RBF Kernel (C=100, g=0.01) as the best parameter set via CV.
+- [2026-05-06] Re-trained the final model on the full training set and evaluated on the 2,000-sample test set.
+- [2026-05-06] Generated `Question3_Report.md` summarizing the cross-validation process and final evaluation results.
+- [2026-05-06] Refactored `train_model.py` to support unified Holdout and 5-fold Cross-Validation via `--method` flag.
+- [2026-05-06] Created `predict_model.py` to handle evaluation for both Holdout and Cross-Validation (aggregating results from fold models).
+- [2026-05-06] Verified the new unified interface with test runs for both Holdout and CV methods.
+- [2026-05-06] Modified CV logic to save fold data (train/validation) persistently in `data/cross_validation/` instead of using temporary files.
+- [2026-05-06] Reorganized `train.scale` and `test.scale` into `data/holdout/` and updated scripts to use these new default paths.
+- [2026-05-06] Reorganized model storage: Holdout models in `models/`, CV models in `models_cv/{model_name}/`.
+- [2026-05-06] Updated scripts to use simple naming (`model1` to `model5`) and automatically save evaluation results to `results.txt` in the respective model directories.

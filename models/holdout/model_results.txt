@@ -1,0 +1,51 @@
+
+--- Holdout Test Set Evaluation ---
+Confusion Matrix:
+[[4287  433]
+ [ 484 4796]]
+Accuracy:  0.9083
+Precision: 0.8986
+Recall:    0.9083
+FPR:       0.0917
+TNR:       0.9083
+FNR:       0.0917
+--- Holdout Test Set Evaluation ---
+Confusion Matrix:
+[[4229  491]
+ [ 442 4838]]
+Accuracy:  0.9067
+Precision: 0.9054
+Recall:    0.8960
+FPR:       0.0837
+TNR:       0.9163
+FNR:       0.1040
+--- Holdout Test Set Evaluation ---
+Confusion Matrix:
+[[4233  487]
+ [ 455 4825]]
+Accuracy:  0.9058
+Precision: 0.9029
+Recall:    0.8968
+FPR:       0.0862
+TNR:       0.9138
+FNR:       0.1032
+--- Holdout Test Set Evaluation ---
+Confusion Matrix:
+[[4262  458]
+ [ 441 4839]]
+Accuracy:  0.9101
+Precision: 0.9062
+Recall:    0.9030
+FPR:       0.0835
+TNR:       0.9165
+FNR:       0.0970
+--- Holdout Test Set Evaluation ---
+Confusion Matrix:
+[[4154  566]
+ [ 532 4748]]
+Accuracy:  0.8902
+Precision: 0.8865
+Recall:    0.8801
+FPR:       0.1008
+TNR:       0.8992
+FNR:       0.1199
