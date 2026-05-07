@@ -31,16 +31,16 @@ def calc_metrics(y_true, y_pred):
         'FNR': fnr
     }
 
-def print_metrics(m, title="Results", output_file=None):
+def print_metrics(model_name, metrics, title="Results", output_file=None):
     report = []
-    report.append(f"\n--- {title} ---")
-    report.append(f"Confusion Matrix:\n{m['CM']}")
-    report.append(f"Accuracy:  {m['Accuracy']:.4f}")
-    report.append(f"Precision: {m['Precision']:.4f}")
-    report.append(f"Recall:    {m['Recall/TPR']:.4f}")
-    report.append(f"FPR:       {m['FPR']:.4f}")
-    report.append(f"TNR:       {m['TNR']:.4f}")
-    report.append(f"FNR:       {m['FNR']:.4f}")
+    report.append(f"\n--- {model_name} {title} ---")
+    report.append(f"Confusion Matrix:\n{metrics['CM']}")
+    report.append(f"Accuracy:  {metrics['Accuracy']:.4f}")
+    report.append(f"Precision: {metrics['Precision']:.4f}")
+    report.append(f"Recall:    {metrics['Recall/TPR']:.4f}")
+    report.append(f"FPR:       {metrics['FPR']:.4f}")
+    report.append(f"TNR:       {metrics['TNR']:.4f}")
+    report.append(f"FNR:       {metrics['FNR']:.4f}")
     
     report_text = "\n".join(report)
     print(report_text)
@@ -65,8 +65,8 @@ def predict_holdout():
             y_pred = [float(line.strip()) for line in f]
             
             metrics = calc_metrics(y_true, y_pred)
-            result_file = os.path.join("models\holdout", f"model_results.txt")
-            print_metrics(metrics, "Holdout Test Set Evaluation", result_file)
+            result_file = os.path.join("models\\holdout", f"model_results.txt")
+            print_metrics(f'Model {i}', metrics, "Holdout Test Set Evaluation", result_file)
 
 def predict_cv():
     for i in range(1, 6):
@@ -77,7 +77,7 @@ def predict_cv():
             model_path = f"{model_dir}\\model{i}_fold{j}.txt"
             data_path = f"data\\cross_validation\\val_fold{j}.scale"
 
-            output_path = f"models\cross_validation\model{i}\model{i}_fold{j}_output.txt"
+            output_path = f"models\\cross_validation\\model{i}\\model{i}_fold{j}_output.txt"
             cmd = f"svm-predict {data_path} {model_path} {output_path}"
             subprocess.run(cmd, shell=True)
 
@@ -93,10 +93,13 @@ def predict_cv():
 
         avg_metrics = {}
         for key in fold_metrics[0].keys():
-            avg_metrics[key] = sum(m[key] for m in fold_metrics) / len(fold_metrics)        
+            if key == 'CM':
+                avg_metrics[key] = np.sum([m[key] for m in fold_metrics], axis=0) 
+            else:
+                avg_metrics[key] = np.mean([m[key] for m in fold_metrics], axis=0)        
         
-        result_file = os.path.join("models\cross_validation", "model_results.txt")
-        print_metrics(avg_metrics, "Cross validation Test Set Evaluation", result_file)
+        result_file = os.path.join("models\\cross_validation", "model_results.txt")
+        print_metrics(f'Model {i}', avg_metrics, "Cross validation Test Set Evaluation", result_file)
             
 
 

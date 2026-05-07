@@ -12,7 +12,7 @@ params_list = [
     {'s': 0,  't': 2,  'c': 100,   'g': 0.01},
     {'s': 0,  't': 2,  'c': 10,  'g': 1}
 ]
-mode = 'holdout'
+mode = 'cv'
 
 for i, params in enumerate(params_list):
     cmd = [

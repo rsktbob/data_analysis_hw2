@@ -27,64 +27,64 @@
 * **設計理念**：作為 Baseline。測試寶可夢對戰的特徵是否在原維度就具備良好的線性可分性。
 * **Confusion Matrix**:
   ```text
-  [[840 (TP),  104 (FN)]
-   [ 91 (FP),  965 (TN)]]
+  [[4287 (TP),  433 (FN)]
+   [ 484 (FP), 4796 (TN)]]
   ```
 * **Metrics**:
-  * **Accuracy**: 0.9025
-  * **Precision**: 0.9023
-  * **Recall (TPR)**: 0.8898
-  * **FPR**: 0.0862
-  * **TNR**: 0.9138
-  * **FNR**: 0.1102
+  * **Accuracy**: 0.9083
+  * **Precision**: 0.8986
+  * **Recall (TPR)**: 0.9083
+  * **FPR**: 0.0917
+  * **TNR**: 0.9083
+  * **FNR**: 0.0917
 
 ### Model 2: RBF 預設參數 (RBF Kernel, Baseline)
 * **參數設定**：`-s 0 -t 2 -c 1 -g 0.1`
 * **設計理念**：RBF 的基礎表現，使用適中的 `C` 與 `gamma`。
 * **Confusion Matrix**:
   ```text
-  [[829,  115]
-   [ 96,  960]]
+  [[4229,  491]
+   [ 442, 4838]]
   ```
-* **Metrics**: Accuracy: 0.8945 | Precision: 0.8962 | Recall: 0.8782 | FPR: 0.0909 | TNR: 0.9091 | FNR: 0.1218
+* **Metrics**: Accuracy: 0.9067 | Precision: 0.9054 | Recall: 0.8960 | FPR: 0.0837 | TNR: 0.9163 | FNR: 0.1040
 
 ### Model 3: 高懲罰 RBF (RBF Kernel, High C)
 * **參數設定**：`-s 0 -t 2 -c 10 -g 0.1`
 * **設計理念**：提高 `C` 值，減少訓練集的容錯率，試圖捕捉更多決策邊界的細節。
 * **Confusion Matrix**:
   ```text
-  [[831,  113]
-   [106,  950]]
+  [[4233,  487]
+   [ 455, 4825]]
   ```
-* **Metrics**: Accuracy: 0.8905 | Precision: 0.8869 | Recall: 0.8803 | FPR: 0.1004 | TNR: 0.8996 | FNR: 0.1197
-*(觀察：反而發生了輕微的 Overfitting，導致 Test Set 準確率下降至 89.05%)*
+* **Metrics**: Accuracy: 0.9058 | Precision: 0.9029 | Recall: 0.8968 | FPR: 0.0862 | TNR: 0.9138 | FNR: 0.1032
+*(觀察：反而發生了輕微的 Overfitting，導致 Test Set 準確率下降至 90.58%)*
 
 ### Model 4: 👑 最佳參數 (RBF Kernel, High C, Low Gamma)
 * **參數設定**：`-s 0 -t 2 -c 100 -g 0.01`
 * **設計理念**：將 `C` 開到非常大 (100) 以強制模型分類正確，但同時將 `gamma` 縮小至 `0.01` 來擴大個別樣本的作用範圍，避免過度擬合產生的陡峭決策邊界。
 * **Confusion Matrix**:
   ```text
-  [[847,   97]
-   [ 94,  962]]
+  [[4262,   458]
+   [ 441,  4839]]
   ```
 * **Metrics**:
-  * **Accuracy**: 0.9045 (最高)
-  * **Precision**: 0.9001
-  * **Recall (TPR)**: 0.8972 (最高)
-  * **FPR**: 0.0890
-  * **TNR**: 0.9110
-  * **FNR**: 0.1028 (最低)
+  * **Accuracy**: 0.9101 (最高)
+  * **Precision**: 0.9062
+  * **Recall (TPR)**: 0.9030 (最高)
+  * **FPR**: 0.0835
+  * **TNR**: 0.9165
+  * **FNR**: 0.0970 (最低)
 
 ### Model 5: 容易過擬合的 RBF (RBF Kernel, High Gamma)
 * **參數設定**：`-s 0 -t 2 -c 10 -g 1`
 * **設計理念**：刻意將 `gamma` 調大，讓各點的影響範圍變積極小，測試是否會發生 Overfitting。
 * **Confusion Matrix**:
   ```text
-  [[802,  142]
-   [139,  917]]
+  [[4154,  566]
+   [ 532, 4748]]
   ```
-* **Metrics**: Accuracy: 0.8595 | Precision: 0.8523 | Recall: 0.8496 | FPR: 0.1316 | TNR: 0.8684 | FNR: 0.1504
-*(觀察：如預期發生了嚴重的 Overfitting，準確率暴跌至 85.95%)*
+* **Metrics**: Accuracy: 0.8902 | Precision: 0.8865 | Recall: 0.8801 | FPR: 0.1008 | TNR: 0.8992 | FNR: 0.1199
+*(觀察：如預期發生了嚴重的 Overfitting，準確率暴跌至 89.02%)*
 
 ---
 
@@ -93,6 +93,6 @@
 經過五組參數的交叉比較，最終選擇 **Model 4 (`-t 2 -c 100 -g 0.01`)** 為最佳參數組合。
 
 **選擇依據：**
-1. **最高 Accuracy (90.45%)**：在所有模型中，它能夠最正確地預測寶可夢對戰的勝負。
-2. **最低的 FNR (0.1028) 與最高的 Recall (0.8972)**：代表模型能更敏銳地捕捉到「第一隻寶可夢獲勝 (+1)」的真實情況，漏判率最低。
+1. **最高 Accuracy (91.01%)**：在所有模型中，它能夠最正確地預測寶可夢對戰的勝負。
+2. **最低的 FNR (0.0970) 與最高的 Recall (0.9030)**：代表模型能更敏銳地捕捉到「第一隻寶可夢獲勝 (+1)」的真實情況，漏判率最低。
 3. **優於 Linear Kernel**：雖然 Model 1 (線性, Accuracy 90.25%) 表現極佳，這證明了我們在 Question 1 所做的「特徵差值化 (Difference Method)」讓資料在空間中變得極度線性可分。但 Model 4 透過非線性的 RBF 搭配極小的 `gamma`，成功在線性邊界上微調出了更好的非線性曲線，從而取得了超越線性的最高準確率。

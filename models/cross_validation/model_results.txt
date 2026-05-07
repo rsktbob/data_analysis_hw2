@@ -1,51 +1,51 @@
 
---- Cross validation Test Set Evaluation ---
+--- Model 1 Cross validation Test Set Evaluation ---
 Confusion Matrix:
-[[4285.4  434.8]
- [ 470.6 4809.2]]
-Accuracy:  0.9095
-Precision: 0.9011
-Recall:    0.9079
-FPR:       0.0891
-TNR:       0.9109
-FNR:       0.0921
---- Cross validation Test Set Evaluation ---
+[[17158  1723]
+ [ 1909 19210]]
+Accuracy:  0.9092
+Precision: 0.8999
+Recall:    0.9087
+FPR:       0.0904
+TNR:       0.9096
+FNR:       0.0913
+--- Model 2 Cross validation Test Set Evaluation ---
 Confusion Matrix:
-[[4267.6  452.6]
- [ 443.4 4836.4]]
-Accuracy:  0.9104
-Precision: 0.9059
-Recall:    0.9041
-FPR:       0.0840
-TNR:       0.9160
-FNR:       0.0959
---- Cross validation Test Set Evaluation ---
+[[17056  1825]
+ [ 1854 19265]]
+Accuracy:  0.9080
+Precision: 0.9020
+Recall:    0.9033
+FPR:       0.0878
+TNR:       0.9122
+FNR:       0.0967
+--- Model 3 Cross validation Test Set Evaluation ---
 Confusion Matrix:
-[[4252.6  467.6]
- [ 442.8 4837. ]]
-Accuracy:  0.9090
-Precision: 0.9057
-Recall:    0.9009
-FPR:       0.0839
-TNR:       0.9161
-FNR:       0.0991
---- Cross validation Test Set Evaluation ---
+[[17023  1858]
+ [ 1852 19267]]
+Accuracy:  0.9073
+Precision: 0.9019
+Recall:    0.9016
+FPR:       0.0877
+TNR:       0.9123
+FNR:       0.0984
+--- Model 4 Cross validation Test Set Evaluation ---
 Confusion Matrix:
-[[4283.8  436.4]
- [ 442.2 4837.6]]
-Accuracy:  0.9121
-Precision: 0.9064
-Recall:    0.9075
-FPR:       0.0838
-TNR:       0.9162
-FNR:       0.0925
---- Cross validation Test Set Evaluation ---
+[[17111  1770]
+ [ 1823 19296]]
+Accuracy:  0.9102
+Precision: 0.9037
+Recall:    0.9063
+FPR:       0.0863
+TNR:       0.9137
+FNR:       0.0937
+--- Model 5 Cross validation Test Set Evaluation ---
 Confusion Matrix:
-[[4177.4  542.8]
- [ 537.4 4742.4]]
-Accuracy:  0.8920
-Precision: 0.8860
-Recall:    0.8850
-FPR:       0.1018
-TNR:       0.8982
-FNR:       0.1150
+[[16516  2365]
+ [ 2287 18832]]
+Accuracy:  0.8837
+Precision: 0.8785
+Recall:    0.8747
+FPR:       0.1083
+TNR:       0.8917
+FNR:       0.1253

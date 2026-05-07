@@ -1,0 +1,51 @@
+
+--- Cross validation Test Set Evaluation ---
+Confusion Matrix:
+[[4285.4  434.8]
+ [ 470.6 4809.2]]
+Accuracy:  0.9095
+Precision: 0.9011
+Recall:    0.9079
+FPR:       0.0891
+TNR:       0.9109
+FNR:       0.0921
+--- Cross validation Test Set Evaluation ---
+Confusion Matrix:
+[[4267.6  452.6]
+ [ 443.4 4836.4]]
+Accuracy:  0.9104
+Precision: 0.9059
+Recall:    0.9041
+FPR:       0.0840
+TNR:       0.9160
+FNR:       0.0959
+--- Cross validation Test Set Evaluation ---
+Confusion Matrix:
+[[4252.6  467.6]
+ [ 442.8 4837. ]]
+Accuracy:  0.9090
+Precision: 0.9057
+Recall:    0.9009
+FPR:       0.0839
+TNR:       0.9161
+FNR:       0.0991
+--- Cross validation Test Set Evaluation ---
+Confusion Matrix:
+[[4283.8  436.4]
+ [ 442.2 4837.6]]
+Accuracy:  0.9121
+Precision: 0.9064
+Recall:    0.9075
+FPR:       0.0838
+TNR:       0.9162
+FNR:       0.0925
+--- Cross validation Test Set Evaluation ---
+Confusion Matrix:
+[[4177.4  542.8]
+ [ 537.4 4742.4]]
+Accuracy:  0.8920
+Precision: 0.8860
+Recall:    0.8850
+FPR:       0.1018
+TNR:       0.8982
+FNR:       0.1150

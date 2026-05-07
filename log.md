@@ -32,3 +32,13 @@
 - [2026-05-06] Reorganized `train.scale` and `test.scale` into `data/holdout/` and updated scripts to use these new default paths.
 - [2026-05-06] Reorganized model storage: Holdout models in `models/`, CV models in `models_cv/{model_name}/`.
 - [2026-05-06] Updated scripts to use simple naming (`model1` to `model5`) and automatically save evaluation results to `results.txt` in the respective model directories.
+- [2026-05-07] Created `README.md` to document the project structure, workflow, and features.
+- [2026-05-07] Updated `Question2_Report.md` and `Question3_Report.md` with "overall data" results (full dataset performance).
+- [2026-05-07] Reorganized evaluation results: Moved `model_results.txt` files to `data/holdout/` and `data/cross_validation/` as requested.
+- [2026-05-07] Modified `predict_model.py` to save future evaluation results directly to the new `data/` directory locations.
+- [2026-05-07] Recalculated summed Confusion Matrices for the Question 3 report to reflect the 50,000-sample 5-fold cross-validation.
+- [2026-05-07] Created `question4_roc.py` to implement Question 4: SVM training with probability estimates, manual ROC calculation, and AUC computation.
+- [2026-05-07] Executed `question4_roc.py` to generate `roc_curve.png` (AUC = 0.9362).
+- [2026-05-07] Generated `Question4_Report.md` with detailed explanations of the ROC drawing and AUC calculation methods.
+- [2026-05-07] Updated `Question3_Report.md` to correctly describe the 50,000-sample dataset used for cross-validation and ensure consistency with `models/cross_validation/model_results.txt`.
+- [2026-05-07] Updated `Question4_Report.md` to match the specific implementation and logic used in `ROC_plot.py`, and verified the final AUC of 0.9362.

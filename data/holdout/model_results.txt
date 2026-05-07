@@ -1,5 +1,5 @@
 
---- Model 1 Holdout Test Set Evaluation ---
+--- Holdout Test Set Evaluation ---
 Confusion Matrix:
 [[4287  433]
  [ 484 4796]]
@@ -9,7 +9,7 @@ Recall:    0.9083
 FPR:       0.0917
 TNR:       0.9083
 FNR:       0.0917
---- Model 2 Holdout Test Set Evaluation ---
+--- Holdout Test Set Evaluation ---
 Confusion Matrix:
 [[4229  491]
  [ 442 4838]]
@@ -19,7 +19,7 @@ Recall:    0.8960
 FPR:       0.0837
 TNR:       0.9163
 FNR:       0.1040
---- Model 3 Holdout Test Set Evaluation ---
+--- Holdout Test Set Evaluation ---
 Confusion Matrix:
 [[4233  487]
  [ 455 4825]]
@@ -29,7 +29,7 @@ Recall:    0.8968
 FPR:       0.0862
 TNR:       0.9138
 FNR:       0.1032
---- Model 4 Holdout Test Set Evaluation ---
+--- Holdout Test Set Evaluation ---
 Confusion Matrix:
 [[4262  458]
  [ 441 4839]]
@@ -39,7 +39,7 @@ Recall:    0.9030
 FPR:       0.0835
 TNR:       0.9165
 FNR:       0.0970
---- Model 5 Holdout Test Set Evaluation ---
+--- Holdout Test Set Evaluation ---
 Confusion Matrix:
 [[4154  566]
  [ 532 4748]]
