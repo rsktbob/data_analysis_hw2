@@ -10,17 +10,23 @@ This project aims to predict the outcome of Pokémon battles using Support Vecto
 │   ├── holdout/            # 80/20 split data
 │   └── cross_validation/   # 5-fold CV split data
 ├── models/                 # Saved SVM models
-├── reports/                # Project analysis reports (Q1-Q4)
-├── scripts/                # Python scripts for workflow
-│   ├── merge_data.py       # Merges pokemon stats with combat records
-│   ├── data_transform.py   # Feature engineering and transformation
-│   ├── split_data.py       # Data splitting (Hold-out & CV)
-│   ├── train_model.py      # SVM model training wrapper
-│   ├── predict_model.py    # Prediction and metric calculation
-│   └── roc_plot.py         # ROC curve generation and AUC calculation
-├── pokemon.csv             # Original Pokémon dataset
-├── combats.csv             # Original combat records
-└── svm-*.exe               # LIBSVM executables (Windows)
+│   ├── holdout/            # 使用data/holdout/train.scale訓練
+│   └── cross_validation/   # 使用data/cross_validation/train_ fold*                
+├── merge_data.py       # Merges pokemon stats with combat records
+├── data_transform.py   # 資料前處理
+├── feature_analysis.py # 找尋重要的特徵
+├── split_data.py       # Data splitting (Holdout & CV)
+├── train_model.py      # train model (Holdout & CV)
+├── predict_model.py    # Prediction and metric calculation
+├── roc_plot.py         # ROC curve generation and AUC calculation
+├── pokemon.csv         # Original Pokémon dataset
+├── combats.csv         # Original combat records
+├── merged_data.csv     # 將pokemon.csv和combats.csv合併的資料
+├── pokemon_data.txt    # 經過data_transform，只保留重要的特徵
+├── pokemon_data.scale  # 經過svm-scale
+├── 資料探勘hw2.pdf      # 完整報告
+└── svm-*.exe           # LIBSVM executables (Windows)
+
 ```
 
 ## Key Features
